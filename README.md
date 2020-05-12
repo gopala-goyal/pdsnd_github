@@ -5,7 +5,7 @@ May 11, 2020
 US Bikeshare Analysis 
 
 ### Description
-Describe what your project is about and what it does
+The project is to develop a python script to find insights about the Bikeshares in US. Mainly Chicago, Washington and NYC
 
 ### Files used
 Include the files used
