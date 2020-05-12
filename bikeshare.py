@@ -17,28 +17,28 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    
-    
+
+
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city=input("\nPlease enter any of the following cities to explore the data: chicago, new york city, washington: ").lower()
-    
+
     while(True):
         if city in CITY_DATA.keys():
             break
         else:
             city=input("\nPlease enter the correct city name out of Washington, New york city or Chicago: ").lower()
-                   
+
     # TO DO: get user input for month (all, january, february, ... , june)
 	# making input lower case to prevent errors
-   
+
     month = input("\nPlease enter any of the filter month: all,january,february,march,april,may,june: ").lower()
-    
-    while(True):    
+
+    while(True):
         if month in months:
             break
         else:
             month=input("\nPlease enter the correct month name: ").lower()
-    
+
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
 
     day = input("\nPlease enter any of the filter day: all,monday,tuesday,wednesday,thursday,friday,saturday,sunday: ").lower()
@@ -94,7 +94,7 @@ def time_stats(df,month,day):
     Input: DataFrame, month name, day of week
     Conditions: In case the month is All, mode is not displayed, similarly, if day is all, mode is not displayed
     Output: Mode value of the various station columns
-    
+
     """
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
@@ -117,8 +117,8 @@ def time_stats(df,month,day):
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip.
-    Input: DataFrame
-    Output: Mode value of the various station columns
+    Input: Filtered DataFrame
+    Output: Mode value of the various station columns and information about the stations popularity
     """
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
@@ -166,7 +166,7 @@ def trip_duration_stats(df):
     minutes = meantt // 60
     meantt = minutes % 60
     print("\nMean travel time: {} hours , {} Minutes and {} Seconds".format(hours, minutes, meantt))
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -187,7 +187,7 @@ def user_stats(df):
         if df['Gender'].isnull().any():
             print("\nNaN values found in Gender. Forward filling them.....")
             df['Gender']=df['Gender'].fillna(method = 'ffill', axis=0)
-        
+
         data=df['Gender'].value_counts()
         for i in data.index.tolist():
             print("\nGender:{}, Value: {}".format(i,data[i]))
@@ -201,14 +201,14 @@ def user_stats(df):
         print("\nMost Recent Year of birth: {}".format(df['Birth Year'].max()))
         print("\nMost Common of birth: {}".format(df['Birth Year'].mode()[0]))
     print("\nThis took %s seconds." % (time.time() - start_time))
-    
+
     print('-'*40)
 
 def display(df):
     rows=5
     st=0
     end=rows-1
-    
+
     while(True):
         view_data = input("\nWould you like to view some user data? Enter yes or no: ")
         if view_data.lower()=='yes':
@@ -220,7 +220,7 @@ def display(df):
             break
         else:
             break
-            
+
 def main():
     while True:
         city, month, day = get_filters()
