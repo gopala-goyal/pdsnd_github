@@ -8,7 +8,7 @@ US Bikeshare Analysis
 The project is to develop a python script to find insights about the Bikeshares in US. Mainly Chicago, Washington and NYC
 
 ### Files used
-Include the files used
+CSV files for all the 3 cities
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
