@@ -26,9 +26,10 @@ def get_filters():
         if city in CITY_DATA.keys():
             break
         else:
-            city=input("\nPlease enter the correct city name: ").lower()
+            city=input("\nPlease enter the correct city name out of Washington, New york city or Chicago: ").lower()
                    
     # TO DO: get user input for month (all, january, february, ... , june)
+	# making input lower case to prevent errors
    
     month = input("\nPlease enter any of the filter month: all,january,february,march,april,may,june: ").lower()
     
