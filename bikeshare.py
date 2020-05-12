@@ -117,7 +117,7 @@ def time_stats(df,month,day):
 def station_stats(df):
     """Displays statistics on the most popular stations and trip.
     Input: Filtered DataFrame
-    Output: Mode value of the various station columns
+    Output: Mode value of the various station columns and information about the stations popularity
     """
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
